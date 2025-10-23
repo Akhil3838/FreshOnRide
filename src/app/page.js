@@ -3,133 +3,49 @@ import Footer from "./components/Footer";
 export default function Home() {
   return (
     <>
-    <section>
+<section className="hero-section">
+  {/* Transparent Header */}
+  <header className="transparent-header">
+    <div className="container d-flex justify-content-between align-items-center">
+      {/* Left - Logo */}
+      <div className="logo">
+        <img
+          src="/assets/images/logo1.png"
+          alt="Fresh on Ride Logo"
+          className="logo-img"
+        />
+      </div>
+
+      {/* Right - Navigation Links */}
+      <nav className="nav-links">
+        <a href="/about">About Us</a>
+        <a href="/contact">Contact Us</a>
+      </nav>
+    </div>
+  </header>
+
   {/* Background video */}
-  <video 
-    src="https://media.gettyimages.com/id/950061532/video/fishing-boat-trawler-vessel-huge-catch-of-fish.mp4?s=mp4-640x640-gi&k=20&c=uqkfnsF3Yf3o3bcf1-t5D3iLCgaPFoRCGEwQwDYggqU=" 
-    autoPlay 
-    loop 
+  <video
+    src="https://media.gettyimages.com/id/950061532/video/fishing-boat-trawler-vessel-huge-catch-of-fish.mp4?s=mp4-640x640-gi&k=20&c=uqkfnsF3Yf3o3bcf1-t5D3iLCgaPFoRCGEwQwDYggqU="
+    autoPlay
+    loop
     muted
-  >
-  </video>
+  ></video>
 
   {/* Hero content */}
-  <div className="hero-content container">
-    <h1><strong>Fresh on Ride</strong></h1>
-    <h2>India’s #1 <br /> food delivery app</h2>
-    <p>Experience fast & easy online ordering on the Fresh on Ride app</p>
-
-    <div className="app-buttons">
-      <img src="/assets/images/googlepay.avif" alt="Get it on Google Play" />
-      <img src="/assets/images/appstore.avif" alt="Download on the App Store" />
-    </div>
+  <div className="hero-content container text-center">
+    <h1>Always delivering</h1>
+    <h1 className="highlight">an amazing experience</h1>
   </div>
 
-  <div className="scroll-down">
+  <div className="scroll-down text-center">
     <span>Scroll down</span>
-    <i className="fa-solid fa-circle-chevron-down"/>
+    <i className="fa-solid fa-circle-chevron-down" />
   </div>
 </section>
 
 {/* animation */}
 
-<section className="animation">
-  <div className="scene">
-    {/* Left Road */}
-    <svg viewBox="0 0 400 500">
-      <path className="road" d="M 300,450 C 250,350 200,250 150,150 100,80 50,50 20,20" />
-  
-      {/* Green Location Pins */}
-      <g transform="translate(300,450)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      <g transform="translate(150,150)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      <g transform="translate(20,20)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      {/* 🚗 Realistic Top-view Red Car */}
-      <g className="car">
-        <g className="top-car">
-          <rect x="0" y="0" width="40" height="20" rx="6" ry="6" fill="#e63946" stroke="#222" strokeWidth="1.2" />
-          <rect x="10" y="3" width="20" height="14" rx="3" ry="3" fill="#87CEEB" opacity="0.7" stroke="#222" strokeWidth="0.5" />
-          <rect x="-1" y="2" width="3" height="16" fill="#333" />
-          <rect x="38" y="2" width="3" height="16" fill="#333" />
-          <circle cx="1" cy="4" r="1.5" fill="#ffeb3b" />
-          <circle cx="1" cy="16" r="1.5" fill="#ffeb3b" />
-          <circle cx="39" cy="4" r="1.5" fill="#f00" />
-          <circle cx="39" cy="16" r="1.5" fill="#f00" />
-        </g>
-      </g>
-    </svg>
-  
-    {/* Center Caption */}
-    <div className="caption">
-      <h1>Better Food, Better Journey</h1>
-    </div>
-  
-    {/* Right Road */}
-    <svg viewBox="0 0 400 500">
-      <path className="road" d="M 100,450 C 150,350 200,250 250,150 300,100 350,80 380,50" />
-  
-      {/* Green Location Pins */}
-      <g transform="translate(100,450)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      <g transform="translate(250,150)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      <g transform="translate(380,50)">
-        <path
-          className="location-pin"
-          d="M12 2C7.03 2 3 6.03 3 11C3 15.25 7.55 21.14 11.25 25.38C11.66 25.83 12.34 25.83 12.75 25.38C16.45 21.14 21 15.25 21 11C21 6.03 16.97 2 12 2Z"
-        />
-        <circle cx="12" cy="11" r="3.5" fill="white" />
-      </g>
-  
-      {/* 🚙 Realistic Top-view Blue Car */}
-      <g className="car2">
-        <g className="top-car">
-          <rect x="0" y="0" width="40" height="20" rx="6" ry="6" fill="#0077b6" stroke="#111" strokeWidth="1.2" />
-          <rect x="10" y="3" width="20" height="14" rx="3" ry="3" fill="#a7d8ff" opacity="0.7" stroke="#111" strokeWidth="0.5" />
-          <rect x="-1" y="2" width="3" height="16" fill="#333" />
-          <rect x="38" y="2" width="3" height="16" fill="#333" />
-          <circle cx="1" cy="4" r="1.5" fill="#ffeb3b" />
-          <circle cx="1" cy="16" r="1.5" fill="#ffeb3b" />
-          <circle cx="39" cy="4" r="1.5" fill="#f00" />
-          <circle cx="39" cy="16" r="1.5" fill="#f00" />
-        </g>
-      </g>
-    </svg>
-  </div>
-  
-</section>
 
 {/* app menu */}
 

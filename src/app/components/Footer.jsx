@@ -67,7 +67,7 @@ function Footer() {
           <div className="footer-section">
             <h6 className="footer-heading">Learn More</h6>
             <ul className="footer-links">
-              <li><a href="#">Privacy</a></li>
+              <li><a href="/privacy">Privacy</a></li>
               <li><a href="#">Security</a></li>
               <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Help & Support</a></li>
