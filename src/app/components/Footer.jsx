@@ -43,11 +43,11 @@ function Footer() {
 
           {/* Column 2 */}
           <div className="footer-section">
-            <h6 className="footer-heading">For Restaurants</h6>
+            <h6 className="footer-heading">For Vendors</h6>
             <ul className="footer-links">
+              <li><a href="/vendor-register">Become a Vendor</a></li>
               <li><a href="#">Partner With Us</a></li>
-              <li><a href="#">Apps For You</a></li>
-              <li><a href="#">Restaurant Dashboard</a></li>
+              <li><a href="#">Vendor Dashboard</a></li>
               <li><a href="#">Business Tools</a></li>
             </ul>
           </div>
@@ -67,9 +67,10 @@ function Footer() {
           <div className="footer-section">
             <h6 className="footer-heading">Learn More</h6>
             <ul className="footer-links">
-              <li><a href="/privacy">Privacy</a></li>
+              <li><a href="/privacy">Privacy Policy</a></li>
+              <li><a href="/terms">Terms & Conditions</a></li>
+              <li><a href="/shipping">Shipping Policy</a></li>
               <li><a href="#">Security</a></li>
-              <li><a href="#">Terms of Service</a></li>
               <li><a href="#">Help & Support</a></li>
               <li><a href="#">Report a Fraud</a></li>
               <li><a href="#">Blog</a></li>

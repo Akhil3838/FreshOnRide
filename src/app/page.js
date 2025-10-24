@@ -20,6 +20,8 @@ export default function Home() {
       <nav className="nav-links">
         <a href="/about">About Us</a>
         <a href="/contact">Contact Us</a>
+        <a href="/vendor-register">Become a Vendor</a>
+        {/* <a href="/privacy">Privacy</a> */}
       </nav>
     </div>
   </header>
