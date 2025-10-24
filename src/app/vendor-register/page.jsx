@@ -18,14 +18,8 @@ function VendorRegister() {
   // Indian districts for dropdown
   const districts = [
     "Select District",
-    "Mumbai", "Delhi", "Bangalore", "Hyderabad", "Chennai", "Kolkata", "Pune", "Ahmedabad",
-    "Jaipur", "Surat", "Lucknow", "Kanpur", "Nagpur", "Indore", "Thane", "Bhopal", "Visakhapatnam",
-    "Pimpri-Chinchwad", "Patna", "Vadodara", "Ghaziabad", "Ludhiana", "Agra", "Nashik", "Faridabad",
-    "Meerut", "Rajkot", "Kalyan-Dombivali", "Vasai-Virar", "Varanasi", "Srinagar", "Aurangabad",
-    "Navi Mumbai", "Solapur", "Vijayawada", "Kolhapur", "Amritsar", "Nashik", "Sangli", "Malegaon",
-    "Ulhasnagar", "Jalgaon", "Akola", "Latur", "Ahmadnagar", "Dhule", "Ichalkaranji", "Parbhani",
-    "Jalna", "Bhusawal", "Panvel", "Satara", "Beed", "Yavatmal", "Kamptee", "Gondia", "Barshi",
-    "Achalpur", "Osmanabad", "Nanded", "Wardha", "Udgir", "Hinganghat"
+    "Kasargod",
+    "Kannur",
   ];
 
   const handleInputChange = (e) => {
