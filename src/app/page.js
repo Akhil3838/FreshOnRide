@@ -1,6 +1,19 @@
+"use client";
+
+import { useState } from "react";
 import Footer from "./components/Footer";
 
 export default function Home() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <>
 <section className="hero-section">
@@ -16,13 +29,45 @@ export default function Home() {
         />
       </div>
 
-      {/* Right - Navigation Links */}
-      <nav className="nav-links">
+      {/* Desktop Navigation Links */}
+      <nav className="nav-links desktop-nav">
         <a href="/about">About Us</a>
         <a href="/contact">Contact Us</a>
         <a href="/vendor-register">Become a Vendor</a>
         {/* <a href="/privacy">Privacy</a> */}
       </nav>
+
+      {/* Mobile Menu Button */}
+      <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+        <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+    </div>
+
+    {/* Mobile Offcanvas Menu */}
+    <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
+      <div className="mobile-menu-overlay" onClick={closeMenu}></div>
+      <div className="mobile-menu-content">
+        <div className="mobile-menu-header">
+          <img
+            src="/assets/images/logo1.png"
+            alt="Fresh on Ride Logo"
+            className="mobile-logo"
+          />
+        </div>
+        
+        <nav className="mobile-nav-links">
+          <a href="/about" onClick={closeMenu}>About Us</a>
+          <a href="/contact" onClick={closeMenu}>Contact Us</a>
+          <a href="/vendor-register" onClick={closeMenu}>Become a Vendor</a>
+          {/* <a href="/privacy" onClick={closeMenu}>Privacy Policy</a>
+          <a href="/terms" onClick={closeMenu}>Terms & Conditions</a>
+          <a href="/shipping" onClick={closeMenu}>Shipping Policy</a> */}
+        </nav>
+      </div>
     </div>
   </header>
 
