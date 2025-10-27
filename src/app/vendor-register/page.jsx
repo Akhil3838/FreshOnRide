@@ -3,6 +3,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import "./vendor-register.css";
+import Footer from "../components/Footer";
 
 function VendorRegister() {
   const [formData, setFormData] = useState({
@@ -14,17 +15,16 @@ function VendorRegister() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Added for header
 
-  // Indian districts for dropdown
-  const districts = [
-    "Select District",
-    "Kasargod",
-    "Kannur",
-  ];
+  const districts = ["Select District", "Kasargod", "Kannur"];
+
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
+  const closeMenu = () => setIsMenuOpen(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
-    setFormData(prev => ({
+    setFormData((prev) => ({
       ...prev,
       [name]: value
     }));
@@ -35,32 +35,27 @@ function VendorRegister() {
     setIsSubmitting(true);
     setSubmitMessage("");
 
-    // Basic validation
     if (!formData.name.trim()) {
       setSubmitMessage("Please enter your name");
       setIsSubmitting(false);
       return;
     }
-
     if (!formData.phoneNumber.trim()) {
       setSubmitMessage("Please enter your phone number");
       setIsSubmitting(false);
       return;
     }
-
     if (!formData.district || formData.district === "Select District") {
       setSubmitMessage("Please select a district");
       setIsSubmitting(false);
       return;
     }
-
     if (!formData.location.trim()) {
       setSubmitMessage("Please enter your location");
       setIsSubmitting(false);
       return;
     }
 
-    // Phone number validation
     const phoneRegex = /^[6-9]\d{9}$/;
     if (!phoneRegex.test(formData.phoneNumber)) {
       setSubmitMessage("Please enter a valid 10-digit phone number");
@@ -69,9 +64,7 @@ function VendorRegister() {
     }
 
     try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      
+      await new Promise((resolve) => setTimeout(resolve, 2000));
       setSubmitMessage("Registration successful! We'll contact you soon.");
       setFormData({
         name: "",
@@ -88,24 +81,77 @@ function VendorRegister() {
 
   return (
     <div className="vendor-container">
-      {/* Navigation */}
-      <nav className="vendor-nav">
-        <div className="vendor-nav-content">
-          <Link href="/" className="vendor-back-btn">
-            ← Back to Home
-          </Link>
-          <h2 className="vendor-nav-title">Vendor Registration</h2>
+      {/* Transparent Header (from Terms page) */}
+      <header className="transparent-header">
+        <div className="container d-flex justify-content-between align-items-center">
+          {/* Left - Logo */}
+          <div className="logo">
+            <img
+              src="/assets/images/logo1.png"
+              alt="Fresh on Ride Logo"
+              className="logo-img"
+            />
+          </div>
+
+          {/* Desktop Navigation */}
+          <nav className="nav-links desktop-nav">
+            <a href="/about">About Us</a>
+            <a href="/contact">Contact Us</a>
+            <a href="/vendor-register" className="active-link">
+              Become a Seller
+            </a>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="mobile-menu-btn"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+            aria-expanded={isMenuOpen}
+          >
+            <span className={`hamburger ${isMenuOpen ? "active" : ""}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
         </div>
-      </nav>
+
+        {/* Mobile Offcanvas Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
+          <div className="mobile-menu-overlay" onClick={closeMenu}></div>
+          <div className="mobile-menu-content">
+            <div className="mobile-menu-header">
+              <img
+                src="/assets/images/logo1.png"
+                alt="Fresh on Ride Logo"
+                className="mobile-logo"
+              />
+            </div>
+
+            <nav className="mobile-nav-links">
+              <a href="/about" onClick={closeMenu}>
+                About Us
+              </a>
+              <a href="/contact" onClick={closeMenu}>
+                Contact Us
+              </a>
+              <a href="/vendor-register" onClick={closeMenu}>
+                Become a Vendor
+              </a>
+            </nav>
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
-      <div className="vendor-hero">
+      <div className="vendor-hero" style={{marginTop:'100px'}}>
         <div className="vendor-hero-content">
-          <h1 className="vendor-title">
-            Join Our Vendor Network
-          </h1>
+          <h1 className="vendor-title">Join Our Vendor Network</h1>
           <p className="vendor-subtitle">
-            Partner with <strong className="vendor-brand">Fresh on Ride</strong> and start delivering fresh fish, meats, and other products to customers in your area.
+            Partner with <strong className="vendor-brand">Fresh on Ride</strong>{" "}
+            and start delivering fresh fish, meats, and other products to
+            customers in your area.
           </p>
         </div>
       </div>
@@ -120,7 +166,6 @@ function VendorRegister() {
             </p>
 
             <form onSubmit={handleSubmit} className="vendor-form">
-              {/* Name Field */}
               <div className="vendor-form-group">
                 <label htmlFor="name" className="vendor-label">
                   Full Name <span className="required">*</span>
@@ -137,7 +182,6 @@ function VendorRegister() {
                 />
               </div>
 
-              {/* Phone Number Field */}
               <div className="vendor-form-group">
                 <label htmlFor="phoneNumber" className="vendor-label">
                   Phone Number <span className="required">*</span>
@@ -155,7 +199,6 @@ function VendorRegister() {
                 />
               </div>
 
-              {/* District Dropdown */}
               <div className="vendor-form-group">
                 <label htmlFor="district" className="vendor-label">
                   District <span className="required">*</span>
@@ -176,7 +219,6 @@ function VendorRegister() {
                 </select>
               </div>
 
-              {/* Location Field */}
               <div className="vendor-form-group">
                 <label htmlFor="location" className="vendor-label">
                   Location/Address <span className="required">*</span>
@@ -193,7 +235,6 @@ function VendorRegister() {
                 />
               </div>
 
-              {/* Submit Button */}
               <button
                 type="submit"
                 className="vendor-submit-btn"
@@ -201,23 +242,24 @@ function VendorRegister() {
               >
                 {isSubmitting ? (
                   <>
-                    <span className="spinner"></span>
-                    Registering...
+                    <span className="spinner"></span> Registering...
                   </>
                 ) : (
                   "Register as Vendor"
                 )}
               </button>
 
-              {/* Submit Message */}
               {submitMessage && (
-                <div className={`vendor-message ${submitMessage.includes("successful") ? "success" : "error"}`}>
+                <div
+                  className={`vendor-message ${
+                    submitMessage.includes("successful") ? "success" : "error"
+                  }`}
+                >
                   {submitMessage}
                 </div>
               )}
             </form>
 
-            {/* Additional Information */}
             <div className="vendor-info">
               <h4>What happens next?</h4>
               <ul>
@@ -231,17 +273,8 @@ function VendorRegister() {
         </div>
       </div>
 
-      {/* Footer Note */}
-      <div className="vendor-footer">
-        <div className="vendor-footer-content">
-          <p className="vendor-footer-text">
-            © 2025 Fresh on Ride. All rights reserved. 
-          </p>
-          <p className="vendor-footer-subtext">
-            Building a network of trusted vendors for fresh deliveries.
-          </p>
-        </div>
-      </div>
+      {/* Footer */}
+      <Footer/>
     </div>
   );
 }
