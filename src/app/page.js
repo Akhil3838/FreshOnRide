@@ -33,7 +33,7 @@ export default function Home() {
       <nav className="nav-links desktop-nav">
         <a href="/about">About Us</a>
         <a href="/contact">Contact Us</a>
-        <a href="/vendor-register">Become a Vendor</a>
+        <a href="/vendor-register">Become a Seller</a>
         {/* <a href="/privacy">Privacy</a> */}
       </nav>
 
@@ -73,7 +73,7 @@ export default function Home() {
 
   {/* Background video */}
   <video
-    src="https://media.gettyimages.com/id/950061532/video/fishing-boat-trawler-vessel-huge-catch-of-fish.mp4?s=mp4-640x640-gi&k=20&c=uqkfnsF3Yf3o3bcf1-t5D3iLCgaPFoRCGEwQwDYggqU="
+    src="https://player.vimeo.com/progressive_redirect/playback/562675904/rendition/720p/file.mp4?loc=external&log_user=0&signature=566a3ea31f36424694bb6f1e41770e89c9133e3c6a282acc365b8ff06c573708"
     autoPlay
     loop
     muted
@@ -91,7 +91,58 @@ export default function Home() {
   </div>
 </section>
 
-{/* animation */}
+{/* section features */}
+<div>
+     <div className="container py-5">
+        <div className="row text-center justify-content-center">
+          
+          {/* Feature 1 */}
+          <div className="col-6 col-md-4 col-lg-3 mb-4">
+            <div className="p-4  bg-white h-100">
+              <img
+                src="https://www.happyway.com.au/cdn/shop/articles/Healthy-Eating-Tips.jpg?v=1749438901"
+                alt="Healthy"
+                className="img-fluid rounded-circle border border-3 border-light shadow-sm mb-3"
+                style={{ width: "120px", height: "120px", objectFit: "cover" }}
+              />
+              <h6 className="fw-semibold mt-2">Healthy</h6>
+              <p> healthy, sound, wholesome, robust, hale, well mean enjoying or indicative of good health. healthy implies full strength and vigor </p>
+            </div>
+          </div>
+  
+          {/* Feature 2 */}
+          <div className="col-6 col-md-4 col-lg-3 mb-4">
+            <div className="p-4  bg-white h-100">
+              <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRAY-deyGHv_t21Yd2BvB4ZjzJye-NC_UvQMA&s"
+                alt="Fresh"
+                className="img-fluid rounded-circle border border-3 border-light shadow-sm mb-3"
+                style={{ width: "120px", height: "120px", objectFit: "cover" }}
+              />
+              <h6 className="fw-semibold mt-2">Fresh</h6>
+               <p> healthy, sound, wholesome, robust, hale, well mean enjoying or indicative of good health. healthy implies full strength and vigor </p>
+            </div>
+          </div>
+  
+          {/* Feature 3 */}
+          <div className="col-6 col-md-4 col-lg-3 mb-4">
+            <div className="p-4  bg-white h-100">
+              <img
+                src="https://damgoodfish.com/cdn/shop/files/pabda.webp?v=1757492128&width=1100"
+                alt="Clean"
+                className="img-fluid rounded-circle border border-3 border-light shadow-sm mb-3"
+                style={{ width: "120px", height: "120px", objectFit: "cover" }}
+              />
+              <h6 className="fw-semibold mt-2">Clean</h6>
+               <p> healthy, sound, wholesome, robust, hale, well mean enjoying or indicative of good health. healthy implies full strength and vigor </p>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+</div>
+
 
 
 {/* app menu */}
@@ -155,13 +206,57 @@ export default function Home() {
   </div>
 </div>
 
+  <section
+      className="position-relative text-center text-white"
+      style={{
+        backgroundImage: "url('https://t4.ftcdn.net/jpg/03/94/73/73/360_F_394737308_A5IJf7vijvkGWCsiCcNI1kAGWoa5g54h.jpg')", // replace with your background
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        minHeight: "80vh",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+    >
+      {/* Overlay */}
+      <div
+        className="position-absolute top-0 start-0 w-100 h-100"
+        style={{ backgroundColor: "rgba(0,0,0,0.3)" }}
+      ></div>
+
+      {/* Content */}
+      <div className="container position-relative">
+        <div className="row justify-content-center">
+          <div className="col-md-10 col-lg-8">
+            <h6 className="fw-semibold mb-3 text-uppercase">
+              Deliver with Fresh On Ride
+            </h6>
+            <h1 className="fw-bold display-5 mb-4">
+              Find work that suits you
+            </h1>
+            <button
+              className="btn btn-lg"
+              style={{
+                backgroundColor: "#00ccbc",
+                color: "#fff",
+                fontWeight: "600",
+                padding: "10px 35px",
+                borderRadius: "8px",
+              }}
+            >
+              Apply now
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
 {/* app qr download */}
 
   <div class="download-container">
     {/* <!-- Left Section --> */}
     <div class="download-text">
       <h2>Download the app now!</h2>
-      <p>Experience seamless online ordering only on the Zomato app</p>
+      <p>Experience seamless online ordering only on the Fresh on Ride app</p>
       <div class="store-buttons">
         <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/></a>
         <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"/></a>

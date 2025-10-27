@@ -43,7 +43,7 @@
   width: 100%;
   padding: 15px 40px;
   z-index: 10;
-  background: rgba(0, 0, 0, 0.2); /* Transparent black */
+  background: rgba(255, 255, 255, 0.95); /* White background */
   display: flex;
   align-items: center;
 }
@@ -54,7 +54,7 @@
 }
 
 .nav-links a {
-  color: #fff;
+  color: #333;
   text-decoration: none;
   margin-left: 25px;
   font-weight: 500;
@@ -87,7 +87,7 @@
   display: block;
   height: 3px;
   width: 100%;
-  background: #fff;
+  background: #333;
   border-radius: 2px;
   transition: all 0.3s ease;
   transform-origin: center;

@@ -1,28 +1,93 @@
-import React from "react";
+"use client";
+import React, { useState } from "react";
 import Link from "next/link";
 import "./shipping.css";
+import Footer from "../components/Footer";
 
 function Shipping() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
   return (
     <div className="shipping-container">
       {/* Navigation */}
-      <nav className="shipping-nav">
-        <div className="shipping-nav-content">
-          <Link href="/" className="shipping-back-btn">
-            ← Back to Home
-          </Link>
-          <h2 className="shipping-nav-title">Shipping Policy</h2>
+      <header className="transparent-header">
+        <div className="container d-flex justify-content-between align-items-center">
+          {/* Left - Logo */}
+         <Link href={'/'} style={{textDecoration:'none'}}>
+            <div className="logo">
+              <img
+                src="/assets/images/logo1.png"
+                alt="Fresh on Ride Logo"
+                className="logo-img"
+              />
+            </div>
+         </Link>
+
+          {/* Desktop Navigation Links */}
+          <nav className="nav-links desktop-nav">
+            <Link href="/about">About Us</Link>
+            <Link href="/contact">Contact Us</Link>
+            <Link href="/vendor-register">Become a Seller</Link>
+          </nav>
+
+          {/* Mobile Menu Button */}
+          <button
+            className="mobile-menu-btn"
+            onClick={toggleMenu}
+            aria-label="Toggle menu"
+          >
+            <span className={`hamburger ${isMenuOpen ? "active" : ""}`}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </span>
+          </button>
         </div>
-      </nav>
+
+        {/* Mobile Offcanvas Menu */}
+        <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
+          <div className="mobile-menu-overlay" onClick={closeMenu}></div>
+          <div className="mobile-menu-content">
+            <div className="mobile-menu-header">
+              <img
+                src="/assets/images/logo1.png"
+                alt="Fresh on Ride Logo"
+                className="mobile-logo"
+              />
+            </div>
+
+            <nav className="mobile-nav-links">
+              <Link href="/about" onClick={closeMenu}>
+                About Us
+              </Link>
+              <Link href="/contact" onClick={closeMenu}>
+                Contact Us
+              </Link>
+              <Link href="/vendor-register" onClick={closeMenu}>
+                Become a Vendor
+              </Link>
+            </nav>
+          </div>
+        </div>
+      </header>
 
       {/* Hero Section */}
-      <div className="shipping-hero">
+      <div className="shipping-hero" style={{marginTop:'100px'}}>
         <div className="shipping-hero-content">
-          <h1 className="shipping-title">
-            Shipping Policy
-          </h1>
+          <h1 className="shipping-title">Shipping Policy</h1>
           <p className="shipping-subtitle">
-            At <strong className="shipping-brand">Fresh on Ride</strong>, we ensure your fresh fish, meats, and other products are delivered safely and promptly to your doorstep with the highest quality standards.
+            At <strong className="shipping-brand">Fresh on Ride</strong>, we
+            ensure your fresh fish, meats, and other products are delivered
+            safely and promptly to your doorstep with the highest quality
+            standards.
           </p>
         </div>
       </div>
@@ -35,7 +100,8 @@ function Shipping() {
             1. Delivery Areas
           </h4>
           <p className="shipping-text">
-            We currently deliver to select areas within major cities. Our delivery coverage includes:
+            We currently deliver to select areas within major cities. Our
+            delivery coverage includes:
           </p>
           <ul className="shipping-list">
             <li>Metropolitan areas and surrounding suburbs</li>
@@ -44,7 +110,8 @@ function Shipping() {
             <li>Corporate offices and industrial areas</li>
           </ul>
           <p className="shipping-text">
-            To check if we deliver to your area, please enter your pin code during checkout or contact our customer support.
+            To check if we deliver to your area, please enter your pin code
+            during checkout or contact our customer support.
           </p>
 
           <h4 className="shipping-section-title">
@@ -55,10 +122,22 @@ function Shipping() {
             We offer flexible delivery options to suit your schedule:
           </p>
           <ul className="shipping-list">
-            <li><strong>Same Day Delivery:</strong> Orders placed before 2 PM (subject to availability)</li>
-            <li><strong>Next Day Delivery:</strong> Orders placed after 2 PM or for next-day delivery</li>
-            <li><strong>Scheduled Delivery:</strong> Choose your preferred date and time slot</li>
-            <li><strong>Express Delivery:</strong> 2-4 hours delivery for urgent orders (additional charges apply)</li>
+            <li>
+              <strong>Same Day Delivery:</strong> Orders placed before 2 PM
+              (subject to availability)
+            </li>
+            <li>
+              <strong>Next Day Delivery:</strong> Orders placed after 2 PM or
+              for next-day delivery
+            </li>
+            <li>
+              <strong>Scheduled Delivery:</strong> Choose your preferred date
+              and time slot
+            </li>
+            <li>
+              <strong>Express Delivery:</strong> 2-4 hours delivery for urgent
+              orders (additional charges apply)
+            </li>
           </ul>
 
           <h4 className="shipping-section-title">
@@ -69,11 +148,23 @@ function Shipping() {
             Our delivery charges are transparent and competitive:
           </p>
           <ul className="shipping-list">
-            <li><strong>Free Delivery:</strong> Orders above ₹500 in most areas</li>
-            <li><strong>Standard Delivery:</strong> ₹50 for orders below ₹500</li>
-            <li><strong>Express Delivery:</strong> ₹100 for 2-4 hour delivery</li>
-            <li><strong>Remote Areas:</strong> Additional charges may apply for distant locations</li>
-            <li><strong>Peak Hours:</strong> Surcharge during festivals and high-demand periods</li>
+            <li>
+              <strong>Free Delivery:</strong> Orders above ₹500 in most areas
+            </li>
+            <li>
+              <strong>Standard Delivery:</strong> ₹50 for orders below ₹500
+            </li>
+            <li>
+              <strong>Express Delivery:</strong> ₹100 for 2-4 hour delivery
+            </li>
+            <li>
+              <strong>Remote Areas:</strong> Additional charges may apply for
+              distant locations
+            </li>
+            <li>
+              <strong>Peak Hours:</strong> Surcharge during festivals and
+              high-demand periods
+            </li>
           </ul>
 
           <h4 className="shipping-section-title">
@@ -81,7 +172,8 @@ function Shipping() {
             4. Packaging & Temperature Control
           </h4>
           <p className="shipping-text">
-            We maintain the highest standards for packaging and temperature control:
+            We maintain the highest standards for packaging and temperature
+            control:
           </p>
           <ul className="shipping-list">
             <li>Insulated packaging for temperature-sensitive products</li>
@@ -96,7 +188,8 @@ function Shipping() {
             5. Delivery Process
           </h4>
           <p className="shipping-text">
-            Our streamlined delivery process ensures your order reaches you safely:
+            Our streamlined delivery process ensures your order reaches you
+            safely:
           </p>
           <ul className="shipping-list">
             <li>Order confirmation via SMS and email</li>
@@ -114,7 +207,9 @@ function Shipping() {
             To ensure successful delivery, please ensure:
           </p>
           <ul className="shipping-list">
-            <li>Someone is available to receive the order at the specified address</li>
+            <li>
+              Someone is available to receive the order at the specified address
+            </li>
             <li>Contact number is reachable during delivery hours</li>
             <li>Delivery address is complete and accurate</li>
             <li>Access instructions are provided for gated communities</li>
@@ -133,7 +228,9 @@ function Shipping() {
             <li>Customer will be contacted for alternative arrangements</li>
             <li>Orders may be held at our facility for 24 hours</li>
             <li>Refund or rescheduling options will be provided</li>
-            <li>Additional delivery charges may apply for rescheduled deliveries</li>
+            <li>
+              Additional delivery charges may apply for rescheduled deliveries
+            </li>
           </ul>
 
           <h4 className="shipping-section-title">
@@ -156,7 +253,8 @@ function Shipping() {
             9. Weather & External Factors
           </h4>
           <p className="shipping-text">
-            While we strive for timely delivery, certain factors may affect delivery times:
+            While we strive for timely delivery, certain factors may affect
+            delivery times:
           </p>
           <ul className="shipping-list">
             <li>Severe weather conditions (heavy rain, storms)</li>
@@ -174,10 +272,31 @@ function Shipping() {
             For any shipping-related queries or issues:
           </p>
           <ul className="shipping-list">
-            <li>Customer Support: <a href="tel:+91-9876543210" className="shipping-link">+91-9876543210</a></li>
-            <li>Email: <a href="mailto:shipping@freshonride.com" className="shipping-link">shipping@freshonride.com</a></li>
+            <li>
+              Customer Support:{" "}
+              <a href="tel:+91-9876543210" className="shipping-link">
+                +91-9876543210
+              </a>
+            </li>
+            <li>
+              Email:{" "}
+              <a
+                href="mailto:shipping@freshonride.com"
+                className="shipping-link"
+              >
+                shipping@freshonride.com
+              </a>
+            </li>
             <li>Live Chat: Available on our website and app</li>
-            <li>WhatsApp: <a href="https://wa.me/919876543210" className="shipping-link">+91-9876543210</a></li>
+            <li>
+              WhatsApp:{" "}
+              <a
+                href="https://wa.me/919876543210"
+                className="shipping-link"
+              >
+                +91-9876543210
+              </a>
+            </li>
             <li>Support Hours: 8 AM - 10 PM (7 days a week)</li>
           </ul>
 
@@ -186,22 +305,15 @@ function Shipping() {
             11. Policy Updates
           </h4>
           <p className="shipping-text" style={{ marginBottom: "0" }}>
-            This shipping policy may be updated from time to time. We will notify customers of any significant changes via email or SMS. The latest version will always be available on our website.
+            This shipping policy may be updated from time to time. We will
+            notify customers of any significant changes via email or SMS. The
+            latest version will always be available on our website.
           </p>
         </div>
       </div>
 
       {/* Footer Note */}
-      <div className="shipping-footer">
-        <div className="shipping-footer-content">
-          <p className="shipping-footer-text">
-            © 2025 Fresh on Ride. All rights reserved. 
-          </p>
-          <p className="shipping-footer-subtext">
-            Delivering freshness, one order at a time.
-          </p>
-        </div>
-      </div>
+      <Footer/>
     </div>
   );
 }
