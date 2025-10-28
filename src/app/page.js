@@ -144,7 +144,6 @@ export default function Home() {
 </div>
 
 
-
 {/* app menu */}
 
 <div className="features-section">
@@ -274,6 +273,75 @@ export default function Home() {
       </div>
     </div>
   </div>
+
+  {/* Testimonials Section */}
+<section className="testimonials-section">
+  <div className="container">
+    <div className="testimonials-header text-center">
+      <h2>What Our Customers Say</h2>
+      <p>Don't just take our word for it - hear from our satisfied customers</p>
+    </div>
+    
+    <div className="testimonials-grid">
+      {/* Testimonial 1 */}
+      <div className="testimonial-card">
+        <div className="testimonial-bubble">
+          <p>
+            Everything I need to order is in one place. Fresh, on-time, and super easy to track. Couldn’t ask for more!
+          </p>
+        </div>
+        <div className="testimonial-author-row">
+          <div className="author-avatar">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Sarah Johnson" />
+          </div>
+          <div className="author-meta">
+            <h4>Sarah Johnson</h4>
+            <span>Regular Customer</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 2 */}
+      <div className="testimonial-card">
+        <div className="testimonial-bubble">
+          <p>
+            You’ve been the most helpful app I’ve used. Healthy options and clear nutrition info make choices simple. Love it!
+          </p>
+        </div>
+        <div className="testimonial-author-row">
+          <div className="author-avatar">
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop&crop=face" alt="Michael Chen" />
+          </div>
+          <div className="author-meta">
+            <h4>Michael Chen</h4>
+            <span>Health Enthusiast</span>
+          </div>
+        </div>
+      </div>
+
+      {/* Testimonial 3 */}
+      <div className="testimonial-card">
+        <div className="testimonial-bubble">
+          <p>
+            I never overbook meals now. Scheduling is a game changer and deliveries are always on time. I LOVE IT!
+          </p>
+        </div>
+        <div className="testimonial-author-row">
+          <div className="author-avatar">
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop&crop=face" alt="Emily Rodriguez" />
+          </div>
+          <div className="author-meta">
+            <h4>Emily Rodriguez</h4>
+            <span>Loyal Customer</span>
+          </div>
+        </div>
+      </div>
+
+      
+    </div>
+  </div>
+</section>
+
 
   <Footer/>
 
