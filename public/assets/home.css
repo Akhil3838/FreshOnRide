@@ -989,6 +989,12 @@
   .social-links {
     justify-content: center;
   }
+  .footer-logo{
+    text-align: left !important
+  }
+  .footer-tagline{
+    text-align: left !important
+  }
 }
 
 @media (max-width: 480px) {
