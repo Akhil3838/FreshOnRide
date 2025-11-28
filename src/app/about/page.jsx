@@ -2,19 +2,13 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import "./about.css";
+import Header from "../components/Header";
 
 function About() {
   return (
     <div className="about-container">
       {/* Navigation */}
-      <nav className="about-nav">
-        <div className="about-nav-content">
-          <Link href="/" className="about-back-btn">
-            ← Back to Home
-          </Link>
-          <h2 className="about-nav-title">About Us</h2>
-        </div>
-      </nav>
+     <Header/>
 
       {/* Hero Section */}
       <div className="about-hero">

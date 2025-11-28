@@ -29,54 +29,31 @@ function Footer() {
           </div>
 
           {/* Column 1 */}
-          <div className="footer-section">
-            <h6 className="footer-heading">Eternal</h6>
-            <ul className="footer-links">
-              <li><a href="#">Zomato</a></li>
-              <li><a href="#">Blinkit</a></li>
-              <li><a href="#">District</a></li>
-              <li><a href="#">Hyperpure</a></li>
-              <li><a href="#">Feeding India</a></li>
-              <li><a href="#">Investor Relations</a></li>
-            </ul>
-          </div>
 
           {/* Column 2 */}
           <div className="footer-section">
-            <h6 className="footer-heading">For Vendors</h6>
+            <h6 className="footer-heading">Menu</h6>
             <ul className="footer-links">
-              <li><a href="/vendor-register">Become a Vendor</a></li>
-              <li><a href="#">Partner With Us</a></li>
-              <li><a href="#">Vendor Dashboard</a></li>
-              <li><a href="#">Business Tools</a></li>
+              <li><a href="/vendor-register">Become a Seller</a></li>
+               <li><a href="/">Home</a></li>
+              <li><a href="/about">About Us</a></li>
+              <li><a href="/contact">Contact Us</a></li>
             </ul>
           </div>
 
           {/* Column 3 */}
-          <div className="footer-section">
-            <h6 className="footer-heading">For Delivery Partners</h6>
-            <ul className="footer-links">
-              <li><a href="#">Partner With Us</a></li>
-              <li><a href="#">Apps For You</a></li>
-              <li><a href="#">Delivery Dashboard</a></li>
-              <li><a href="#">Training Resources</a></li>
-            </ul>
-          </div>
-
-          {/* Column 4 */}
           <div className="footer-section">
             <h6 className="footer-heading">Learn More</h6>
             <ul className="footer-links">
               <li><a href="/privacy">Privacy Policy</a></li>
               <li><a href="/terms">Terms & Conditions</a></li>
               <li><a href="/shipping">Shipping Policy</a></li>
-              <li><a href="#">Security</a></li>
-              <li><a href="#">Help & Support</a></li>
-              <li><a href="#">Report a Fraud</a></li>
-              <li><a href="#">Blog</a></li>
+              
             </ul>
           </div>
 
+          {/* Column 4 */}
+                   {/* <div className="footer-section"> */}
           {/* App Downloads */}
           <div className="footer-section">
             <h6 className="footer-heading">Get the App</h6>
@@ -97,7 +74,10 @@ function Footer() {
               </a>
             </div>
           </div>
-        </div>
+          </div>
+
+
+        {/* </div> */}
 
         {/* Footer Bottom */}
         <div className="footer-bottom">
@@ -108,7 +88,7 @@ function Footer() {
               Privacy Policy and Content Policies. All trademarks are properties of their
               respective owners.
             </p>
-            <p>© 2008–2025 Zomato™ Ltd. All rights reserved.</p>
+            <p>© 2025 Fresh on Ride™ Ltd. All rights reserved.</p>
           </div>
         </div>
       </div>

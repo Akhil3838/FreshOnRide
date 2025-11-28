@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import Link from "next/link";
 import "./vendor-register.css";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function VendorRegister() {
   const [formData, setFormData] = useState({
@@ -15,12 +16,9 @@ function VendorRegister() {
 
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitMessage, setSubmitMessage] = useState("");
-  const [isMenuOpen, setIsMenuOpen] = useState(false); // Added for header
 
   const districts = ["Select District", "Kasargod", "Kannur"];
 
-  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
-  const closeMenu = () => setIsMenuOpen(false);
 
   const handleInputChange = (e) => {
     const { name, value } = e.target;
@@ -82,68 +80,7 @@ function VendorRegister() {
   return (
     <div className="vendor-container">
       {/* Transparent Header (from Terms page) */}
-      <header className="transparent-header">
-        <div className="container d-flex justify-content-between align-items-center">
-          {/* Left - Logo */}
-          <div className="logo">
-            <img
-              src="/assets/images/logo1.png"
-              alt="Fresh on Ride Logo"
-              className="logo-img"
-            />
-          </div>
-
-          {/* Desktop Navigation */}
-          <nav className="nav-links desktop-nav">
-            <a href="/about">About Us</a>
-            <a href="/contact">Contact Us</a>
-            <a href="/vendor-register" className="active-link">
-              Become a Seller
-            </a>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-            aria-expanded={isMenuOpen}
-          >
-            <span className={`hamburger ${isMenuOpen ? "active" : ""}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-        </div>
-
-        {/* Mobile Offcanvas Menu */}
-        <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
-          <div className="mobile-menu-overlay" onClick={closeMenu}></div>
-          <div className="mobile-menu-content">
-            <div className="mobile-menu-header">
-              <img
-                src="/assets/images/logo1.png"
-                alt="Fresh on Ride Logo"
-                className="mobile-logo"
-              />
-            </div>
-
-            <nav className="mobile-nav-links">
-              <a href="/about" onClick={closeMenu}>
-                About Us
-              </a>
-              <a href="/contact" onClick={closeMenu}>
-                Contact Us
-              </a>
-              <a href="/vendor-register" onClick={closeMenu}>
-                Become a Vendor
-              </a>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+<Header/>
       {/* Hero Section */}
       <div className="vendor-hero" style={{marginTop:'100px'}}>
         <div className="vendor-hero-content">

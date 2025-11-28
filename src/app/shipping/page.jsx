@@ -3,82 +3,14 @@ import React, { useState } from "react";
 import Link from "next/link";
 import "./shipping.css";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 function Shipping() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
 
   return (
     <div className="shipping-container">
       {/* Navigation */}
-      <header className="transparent-header">
-        <div className="container d-flex justify-content-between align-items-center">
-          {/* Left - Logo */}
-         <Link href={'/'} style={{textDecoration:'none'}}>
-            <div className="logo">
-              <img
-                src="/assets/images/logo1.png"
-                alt="Fresh on Ride Logo"
-                className="logo-img"
-              />
-            </div>
-         </Link>
-
-          {/* Desktop Navigation Links */}
-          <nav className="nav-links desktop-nav">
-            <Link href="/about">About Us</Link>
-            <Link href="/contact">Contact Us</Link>
-            <Link href="/vendor-register">Become a Seller</Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="mobile-menu-btn"
-            onClick={toggleMenu}
-            aria-label="Toggle menu"
-          >
-            <span className={`hamburger ${isMenuOpen ? "active" : ""}`}>
-              <span></span>
-              <span></span>
-              <span></span>
-            </span>
-          </button>
-        </div>
-
-        {/* Mobile Offcanvas Menu */}
-        <div className={`mobile-menu ${isMenuOpen ? "active" : ""}`}>
-          <div className="mobile-menu-overlay" onClick={closeMenu}></div>
-          <div className="mobile-menu-content">
-            <div className="mobile-menu-header">
-              <img
-                src="/assets/images/logo1.png"
-                alt="Fresh on Ride Logo"
-                className="mobile-logo"
-              />
-            </div>
-
-            <nav className="mobile-nav-links">
-              <Link href="/about" onClick={closeMenu}>
-                About Us
-              </Link>
-              <Link href="/contact" onClick={closeMenu}>
-                Contact Us
-              </Link>
-              <Link href="/vendor-register" onClick={closeMenu}>
-                Become a Vendor
-              </Link>
-            </nav>
-          </div>
-        </div>
-      </header>
-
+<Header/>
       {/* Hero Section */}
       <div className="shipping-hero" style={{marginTop:'100px'}}>
         <div className="shipping-hero-content">

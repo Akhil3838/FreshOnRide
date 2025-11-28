@@ -2,75 +2,16 @@
 
 import { useState } from "react";
 import Footer from "./components/Footer";
+import Header from "./components/Header";
 
 export default function Home() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
-
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-  };
 
   return (
     <>
+
 <section className="hero-section">
   {/* Transparent Header */}
-  <header className="transparent-header">
-    <div className="container d-flex justify-content-between align-items-center">
-      {/* Left - Logo */}
-      <div className="logo">
-        <img
-          src="/assets/images/logo1.png"
-          alt="Fresh on Ride Logo"
-          className="logo-img"
-        />
-      </div>
-
-      {/* Desktop Navigation Links */}
-      <nav className="nav-links desktop-nav">
-        <a href="/about">About Us</a>
-        <a href="/contact">Contact Us</a>
-        <a href="/vendor-register">Become a Seller</a>
-        {/* <a href="/privacy">Privacy</a> */}
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
-        <span className={`hamburger ${isMenuOpen ? 'active' : ''}`}>
-          <span></span>
-          <span></span>
-          <span></span>
-        </span>
-      </button>
-    </div>
-
-    {/* Mobile Offcanvas Menu */}
-    <div className={`mobile-menu ${isMenuOpen ? 'active' : ''}`}>
-      <div className="mobile-menu-overlay" onClick={closeMenu}></div>
-      <div className="mobile-menu-content">
-        <div className="mobile-menu-header">
-          <img
-            src="/assets/images/logo1.png"
-            alt="Fresh on Ride Logo"
-            className="mobile-logo"
-          />
-        </div>
-        
-        <nav className="mobile-nav-links">
-          <a href="/about" onClick={closeMenu}>About Us</a>
-          <a href="/contact" onClick={closeMenu}>Contact Us</a>
-          <a href="/vendor-register" onClick={closeMenu}>Become a Vendor</a>
-          {/* <a href="/privacy" onClick={closeMenu}>Privacy Policy</a>
-          <a href="/terms" onClick={closeMenu}>Terms & Conditions</a>
-          <a href="/shipping" onClick={closeMenu}>Shipping Policy</a> */}
-        </nav>
-      </div>
-    </div>
-  </header>
-
+<Header/>
   {/* Background video */}
   <video
     src="https://player.vimeo.com/progressive_redirect/playback/562675904/rendition/720p/file.mp4?loc=external&log_user=0&signature=566a3ea31f36424694bb6f1e41770e89c9133e3c6a282acc365b8ff06c573708"
@@ -251,22 +192,22 @@ export default function Home() {
     </section>
 {/* app qr download */}
 
-  <div class="download-container">
+  <div className="download-container">
     {/* <!-- Left Section --> */}
-    <div class="download-text">
+    <div className="download-text">
       <h2>Download the app now!</h2>
       <p>Experience seamless online ordering only on the Fresh on Ride app</p>
-      <div class="store-buttons">
+      <div className="store-buttons">
         <a href="#"><img src="https://upload.wikimedia.org/wikipedia/commons/7/78/Google_Play_Store_badge_EN.svg" alt="Google Play"/></a>
         <a href="#"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="App Store"/></a>
       </div>
     </div>
 
     {/* <!-- Right Section --> */}
-    <div class="phone-container">
-      <div class="phone-frame">
-        <div class="notch"></div>
-        <div class="qr-area">
+    <div className="phone-container">
+      <div className="phone-frame">
+        <div className="notch"></div>
+        <div className="qr-area">
           <img src="https://b.zmtcdn.com/data/o2_assets/98cc4eba0a6f59e728e5223a70fd39551742471514.png" alt="QR Code"/>
           {/* <!-- <p>Scan the QR code to<br>download the app</p> --> */}
         </div>

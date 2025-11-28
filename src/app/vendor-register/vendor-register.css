@@ -220,7 +220,7 @@
   padding: 1.5rem;
   background: #f8f9fa;
   border-radius: 8px;
-  border-left: 4px solid #ff35bc;
+  /* border-left: 4px solid #ff35bc; */
 }
 
 .vendor-info h4 {
